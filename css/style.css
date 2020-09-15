@@ -1,15 +1,9 @@
 body {
   height: 100vh;
   font-size: 2em;
-<<<<<<< HEAD
   /* background-color: #E4D6A6; */
   /* background-image: url('../img/paper_texture.png'); */
   background: linear-gradient(to top, rgb(0, 0, 0), rgba(34, 37, 43, 0.5));
-=======
-  /*background-color: #E4D6A6;*/
-  /*background-image: url('../img/paper_texture.png');*/
-  background: linear-gradient(to top, rgb(34, 78, 207), rgba(34, 78, 207, 0.5));
->>>>>>> master
   position: relative;
 }
 canvas {
@@ -31,11 +25,7 @@ h3.game-font {
 .img1b {
   background-image: url('../img/img1b.png');
 }
-<<<<<<< HEAD
 /* .img2a {
-=======
-.img2a {
->>>>>>> master
   background-image: url('../img/img2a.png');
 }
 .img2b {
@@ -52,22 +42,13 @@ h3.game-font {
 }
 .img4b {
   background-image: url('../img/img4b.png');
-<<<<<<< HEAD
 } */
 /* .img5a {
-=======
-}
-.img5a {
->>>>>>> master
   background-image: url('../img/img5a.png');
 }
 .img5b {
   background-image: url('../img/img5b.png');
-<<<<<<< HEAD
 } */
-=======
-}
->>>>>>> master
 
 /* END */
 /**************/
