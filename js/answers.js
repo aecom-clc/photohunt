@@ -1,5 +1,6 @@
 var img1 = {
   ansCoords: [  // right answer LOCUS
+<<<<<<< HEAD
     [93, 150],  // [x, y] zeroed coordinates
     [619, 200],
     [345, 370],
@@ -12,6 +13,20 @@ var img1 = {
     [30, 30],
     [30, 20],
     [40, 30]
+=======
+    [235, 190],  // [x, y] zeroed coordinates
+    [619, 74],
+    [477, 422],
+    [309, 261],
+    [18, 442]
+  ],
+  ansArea: [  // right answer AREA
+    [30, 30], // [x-radius, y-radius]
+    [50, 74],
+    [30, 30],
+    [30, 30],
+    [30, 30]
+>>>>>>> master
   ],
   cssClass: 'img1',
   found: [] // will receive arrays of found areas from logFound()
