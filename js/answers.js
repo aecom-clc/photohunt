@@ -8,7 +8,7 @@ var img1 = {
   ],
   ansArea: [  // right answer AREA
     [30, 30], // [x-radius, y-radius]
-    [70, 50],
+    [60, 40],
     [30, 30],
     [30, 20],
     [40, 30]

@@ -42,8 +42,32 @@ h3.game-font {
 }
 .img4b {
   background-image: url('../img/img4b.png');
+} 
+.img5a {
+  background-image: url('../img/img5a.png');
+}
+.img5b {
+  background-image: url('../img/img5b.png');
 } */
-/* .img5a {
+.img2a {
+  background-image: url('../img/01.jpg');
+}
+.img2b {
+  background-image: url('../img/01.jpg');
+}
+/* .img3a {
+  background-image: url('../img/img3a.png');
+}
+.img3b {
+  background-image: url('../img/img3b.png');
+}
+.img4a {
+  background-image: url('../img/img4a.png');
+}
+.img4b {
+  background-image: url('../img/img4b.png');
+} 
+.img5a {
   background-image: url('../img/img5a.png');
 }
 .img5b {

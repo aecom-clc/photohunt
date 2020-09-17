@@ -11,7 +11,8 @@ $(document).ready(function () {
   var ASSIST_CLUE_CREDITS = 3;
 
   // Stores all answer objects (see answers.js)
-  var IMAGES = [img1, img2, img3, img4, img5];
+  // var IMAGES = [img1, img2, img3, img4, img5];
+  var IMAGES = [img1, img2];
   var IMAGES_PLAYED = []; // img objects popped here after each round.
   var CUR_IMG_IN_PLAY = gameplayRound('check'); // stores answers for current round.
 
@@ -39,7 +40,7 @@ $(document).ready(function () {
   // !--- GAME LOGIC ---! //
   // ---- playTurn is the main control-flow function ----
   // Executes when any part of image canvas is clicked.
-  function playTurn (ev) {
+  function playTurn(ev) {
     var isCorrect = false;
     var foundArr = [];
     var latestFind = [];  // 1d array
@@ -48,7 +49,7 @@ $(document).ready(function () {
     if (Array.isArray(ev)) {
       latestFind = ev;
       isCorrect = true; // ansArr will always be true
-    // executes when user clicks on image to try to spot difference
+      // executes when user clicks on image to try to spot difference
     } else if (typeof ev === 'object' && !Array.isArray(ev)) {
       var position = getPosition(ev); // returns [x-val, y-val]
       isCorrect = isRight(position);
@@ -100,7 +101,7 @@ $(document).ready(function () {
     }
   }
 
-  function incrementScore () {
+  function incrementScore() {
     var amt = TIME_LEFT * 50;
     SCORE += amt;
     $('#score-ui').text(SCORE);
@@ -109,14 +110,14 @@ $(document).ready(function () {
   // Pushes info of newly discovered answer into 'found' key in img object
   // info:
   // called by isRight() function
-  function logAnswer (obj, areaArr) {
+  function logAnswer(obj, areaArr) {
     // areaArr format: [lowerX, upperX, lowerY, upperY, centerX, centerY]
     var target = obj;
     target['found'].push(areaArr); // store array in obj key 'found'
   }
 
   // checks whether a click is in an undiscovered area.
-  function isUndiscovered (obj, clickX, clickY) {
+  function isUndiscovered(obj, clickX, clickY) {
     var arr = obj['found']; // stores 2d array
     for (var i = 0; i < arr.length; i++) {
       if (clickX >= arr[i][0] && clickX <= arr[i][1] && clickY >= arr[i][2] && clickY <= arr[i][3]) {
@@ -127,7 +128,7 @@ $(document).ready(function () {
   }
 
   // Verifies if a click is within any hot zone.
-  function isRight (coords) {
+  function isRight(coords) {
     var clickX = coords[0]; // x-axis value
     var clickY = coords[1]; // y-axis value
     var coordsAnswerArr = CUR_IMG_IN_PLAY.ansCoords; // [[x, y], [x, y]...]
@@ -162,7 +163,7 @@ $(document).ready(function () {
 
   // Checks whether current image's differences are all found.
   // true if 5 differences have been found
-  function isRoundOver () {
+  function isRoundOver() {
     var count = 0;
     for (var j = 0; j < CUR_IMG_IN_PLAY.ansCoords.length; j++) {
       if (CUR_IMG_IN_PLAY.ansCoords[j] === 'found') {
@@ -179,7 +180,7 @@ $(document).ready(function () {
   // (1) 'CHECK' - RETURNS TRUE IF FINAL ROUND IS OVER
   // (2) 'LOST' - SETS GAME_OVER TO TRUE
   // (3) 'WON' - SETS GAME_OVER TO TRUE, CALL playVictoryVideo
-  function isGameOver (option) {
+  function isGameOver(option) {
     if (option === 'final') { // returns true if final round is over
       if (IMAGES.length - 1 === 0) { // no more images to play
         var count = 0;
@@ -196,6 +197,8 @@ $(document).ready(function () {
       }
     } else if (option === 'lost') {
       GAME_OVER = true;
+      clearInterval(TIMER_ID);
+      loseBanner();
     } else if (option === 'won') {
       // pop up window w/ 2 options: (1) restart (2) cancel
       GAME_OVER = true;
@@ -207,7 +210,7 @@ $(document).ready(function () {
   // 2 options to manipulate images -
   // (1) 'new': retires old image and serves new one on DOM.
   // (2) 'check': returns current in-play image object.
-  function gameplayRound (option) {
+  function gameplayRound(option) {
     if (option === 'new') {
       // DEALING WITH THE OLD - Update javascript variables:
       var oldImgObj = IMAGES[CUR_IMG_IND];
@@ -229,7 +232,7 @@ $(document).ready(function () {
 
   // Updates DOM with new image for a new round.
   // Called by gameplayRound function.
-  function serveNewImg (imgObject) {
+  function serveNewImg(imgObject) {
     // 'img' argument is an object corresponding to current img in play.
     var leftPaneClassList = document.getElementById('left-pane').classList;
     var rightPaneClassList = document.getElementById('right-pane').classList;
@@ -257,7 +260,7 @@ $(document).ready(function () {
 
   // 'start' / 'stop' timer
   // 'add' for time extension when user clicks Time Assist
-  function timer (option) {
+  function timer(option) {
     if (option === 'start') {
       TIMER_ID = setInterval(function () {
         var percentage = TIME_LEFT + '%';
@@ -268,6 +271,8 @@ $(document).ready(function () {
           GAME_OVER = true;
           document.getElementById('ticking').pause();
           document.getElementById('gameover').play();
+          isGameOver('lost');
+
         } else if (TIME_LEFT < 20) {
           $('#time-bar').removeClass('progress-bar-warning progress-bar-success');
           $('#time-bar').addClass('progress-bar-danger');
@@ -290,7 +295,7 @@ $(document).ready(function () {
   }
 
   // Executes when user clicks Clue Assist.
-  function useClue () {
+  function useClue() {
     // reduce clue credits
     if (ASSIST_CLUE_CREDITS > 0) {
       ASSIST_CLUE_CREDITS--;
@@ -332,7 +337,7 @@ $(document).ready(function () {
   }
 
   // Pushes message onto the msg display box.
-  function initiateCountdown () {
+  function initiateCountdown() {
     var count = 5;
     var tempTimer = setInterval(function () {
       $('#countdown-timer').text(count.toString()); // display in middle of screen
@@ -348,7 +353,7 @@ $(document).ready(function () {
 
   // Gets offsetted coordinates of click on <canvas>
   // x,y origin is at top left corner of canvas element
-  function getPosition (ev) {
+  function getPosition(ev) {
     var paneId = ev.target.id;
     var leftOffset;
     var topOffset;
@@ -381,7 +386,7 @@ $(document).ready(function () {
 
   // Draws oval shape on <canvas> elements
   // (modified from: http://bit.ly/2bBPWHm)
-  function drawEllipse (id, centerX, centerY, width, height) {
+  function drawEllipse(id, centerX, centerY, width, height) {
     var canv = document.getElementById(id);
     var ctx = canv.getContext('2d');
 
@@ -409,7 +414,7 @@ $(document).ready(function () {
 
   // Draws big fat 'X' on clicked coordinates
   // and clears it after a setTimeout
-  function drawAndFadeCross (id, x, y) {
+  function drawAndFadeCross(id, x, y) {
     var can = document.getElementById(id);
     var ctx = can.getContext('2d');
     ctx.lineWidth = 6;
@@ -432,7 +437,7 @@ $(document).ready(function () {
   }
 
   // Clears both canvas completely
-  function clearCanvas () {
+  function clearCanvas() {
     var canv = document.getElementById('canvas-left').getBoundingClientRect();
     var width = Math.round(canv.width);
     var height = Math.round(canv.height);
@@ -456,10 +461,21 @@ $(document).ready(function () {
   });
 
   // Integrates with Bootstrap modal pop up to show Youtube video.
-  function playVictoryVideo () {
+  function playVictoryVideo() {
     $('#videoPopUp').modal('show');
-    var vidUrl = 'https://www.youtube.com/embed/JPBRbIvs5lc?autoplay=1';
-    $('#videoPopUp').find('iframe').attr('src', vidUrl);
+    // var vidUrl = 'https://www.youtube.com/embed/JPBRbIvs5lc?autoplay=1';
+    // $('#videoPopUp').find('iframe').attr('src', vidUrl);
+    $('.modal').each(function () {
+      $(this).on('click', function () {
+        $(this).find('iframe').attr('src', '');
+      });
+    });
+  }
+
+  function loseBanner() {
+    $('#loseBanner').modal('show');
+    // var vidUrl = 'https://www.youtube.com/embed/JPBRbIvs5lc?autoplay=1';
+    // $('#videoPopUp').find('iframe').attr('src', vidUrl);
     $('.modal').each(function () {
       $(this).on('click', function () {
         $(this).find('iframe').attr('src', '');
@@ -468,7 +484,7 @@ $(document).ready(function () {
   }
 
   // MATH
-  function randomIntFromInterval (min, max) {
+  function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 });
