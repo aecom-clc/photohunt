@@ -18,17 +18,17 @@ var img1 = {
 };
 var img2 = {
   ansCoords: [  // right answer LOCUS
-    [162, 412],  // [x, y] zeroed coordinates
-    [106, 265],
-    [441, 223],
-    [119, 23],
-    [344, 143]
+    [440, 37],  // [x, y] zeroed coordinates
+    [608, 232],
+    [112, 398],
+    [337, 183],
+    [286, 421]
   ],
   ansArea: [  // right answer AREA
-    [67, 25], // [x-radius, y-radius]
+    [75, 25], // [x-radius, y-radius]
     [50, 50],
     [32, 32],
-    [30, 30],
+    [50, 30],
     [35, 35]
   ],
   cssClass: 'img2',
