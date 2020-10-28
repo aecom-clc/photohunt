@@ -31,28 +31,6 @@ h3.game-font {
 .img1b {
   background-image: url('../img/Original_Photo07.jpg');
 } */
-
-.img6a {
-  background-image: url('../img/Modify_Photo06.jpg');
-}
-.img6b {
-  background-image: url('../img/Original_Photo06.jpg');
-}
-
-.img5a {
-  background-image: url('../img/Modify_Photo05.jpg');
-}
-.img5b {
-  background-image: url('../img/Original_Photo05.jpg');
-}
-
-.img4a {
-  background-image: url('../img/Modify_Photo04.jpg');
-}
-.img4b {
-  background-image: url('../img/Original_Photo04.jpg');
-}
-
 .img2a {
   background-image: url('../img/Modify_Photo01.jpg');
 }
@@ -64,6 +42,24 @@ h3.game-font {
 }
 .img3b {
   background-image: url('../img/Original_Photo03.jpg');
+}
+.img4a {
+  background-image: url('../img/Modify_Photo04.jpg');
+}
+.img4b {
+  background-image: url('../img/Original_Photo04.jpg');
+}
+.img5a {
+  background-image: url('../img/Modify_Photo05.jpg');
+}
+.img5b {
+  background-image: url('../img/Original_Photo05.jpg');
+}
+.img6a {
+  background-image: url('../img/Modify_Photo06.jpg');
+}
+.img6b {
+  background-image: url('../img/Original_Photo06.jpg');
 }
 
 /* END */
