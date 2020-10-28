@@ -1,39 +1,39 @@
-// var img1 = {
-//   ansCoords: [  // right answer LOCUS
-//     [93, 150],  // [x, y] zeroed coordinates
-//     [619, 200],
-//     [345, 370],
-//     [300, 410],
-//     [35, 442]
-//   ],
-//   ansArea: [  // right answer AREA
-//     [30, 30], // [x-radius, y-radius]
-//     [60, 40],
-//     [30, 30],
-//     [30, 20],
-//     [40, 30]
-//   ],
-//   cssClass: 'img1',
-//   found: [] // will receive arrays of found areas from logFound()
-// };
 var img1 = {
   ansCoords: [  // right answer LOCUS
-    [627, 38],  // [x, y] zeroed coordinates
-    [200, 114],
-    [37, 148],
-    [524, 263],
-    [470, 379]
+    [93, 150],  // [x, y] zeroed coordinates
+    [619, 200],
+    [345, 370],
+    [300, 410],
+    [35, 442]
   ],
   ansArea: [  // right answer AREA
     [30, 30], // [x-radius, y-radius]
     [60, 40],
-    [20, 30],
-    [100, 30],
-    [35, 35]
+    [30, 30],
+    [30, 20],
+    [40, 30]
   ],
   cssClass: 'img1',
   found: [] // will receive arrays of found areas from logFound()
 };
+// var img1 = {
+//   ansCoords: [  // right answer LOCUS
+//     [627, 38],  // [x, y] zeroed coordinates
+//     [200, 114],
+//     [37, 148],
+//     [524, 263],
+//     [470, 379]
+//   ],
+//   ansArea: [  // right answer AREA
+//     [30, 30], // [x-radius, y-radius]
+//     [60, 40],
+//     [20, 30],
+//     [100, 30],
+//     [35, 35]
+//   ],
+//   cssClass: 'img1',
+//   found: [] // will receive arrays of found areas from logFound()
+// };
 
 var img6 = {
   ansCoords: [  // right answer LOCUS
