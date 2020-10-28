@@ -128,39 +128,3 @@ var img3 = {
   cssClass: 'img3',
   found: [] // will receive arrays of found areas from logFound()
 };
-var img4 = {
-  ansCoords: [  // right answer LOCUS
-    [329, 116],  // [x, y] zeroed coordinates
-    [48, 49],
-    [330, 198],
-    [610, 372],
-    [572, 44]
-  ],
-  ansArea: [  // right answer AREA
-    [95, 25], // [x-radius, y-radius]
-    [35, 35],
-    [80, 80],
-    [55, 55],
-    [40, 40]
-  ],
-  cssClass: 'img4',
-  found: [] // will receive arrays of found areas from logFound()
-};
-var img5 = {
-  ansCoords: [  // right answer LOCUS
-    [639, 67],  // [x, y] zeroed coordinates
-    [480, 440],
-    [202, 364],
-    [41, 304],
-    [217, 200]
-  ],
-  ansArea: [  // right answer AREA
-    [35, 60], // [x-radius, y-radius]
-    [35, 35],
-    [60, 40],
-    [50, 50],
-    [40, 40]
-  ],
-  cssClass: 'img5',
-  found: [] // will receive arrays of found areas from logFound()
-};

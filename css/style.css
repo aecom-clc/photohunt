@@ -19,18 +19,18 @@ h3.game-font {
 }
 /**************/
 /* GAMEPLAY IMAGES START */
-.img1a {
-  background-image: url('../img/img1a.png');
-}
-.img1b {
-  background-image: url('../img/img1b.png');
-}
 /* .img1a {
   background-image: url('../img/Modify_Photo07.jpg');
 }
 .img1b {
   background-image: url('../img/Original_Photo07.jpg');
 } */
+.img1a {
+  background-image: url('../img/img1a.png');
+}
+.img1b {
+  background-image: url('../img/img1b.png');
+}
 .img2a {
   background-image: url('../img/Modify_Photo01.jpg');
 }
