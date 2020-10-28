@@ -13,7 +13,7 @@ $(document).ready(function () {
   // Stores all answer objects (see answers.js)
   // var IMAGES = [img1, img2, img3, img4, img5];
   // var IMAGES = [img1, img2, img3];
-  var IMAGES = [img1];
+  var IMAGES = [img1, img2, img3, img4, img5, img6];
   var IMAGES_PLAYED = []; // img objects popped here after each round.
   var CUR_IMG_IN_PLAY = gameplayRound('check'); // stores answers for current round.
 
