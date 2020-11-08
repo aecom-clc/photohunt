@@ -16,6 +16,9 @@
   <script src="js/external/bootstrap.min.js"></script>
   <script src="js/answers.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    var count =0
+  </script>
 
 </head>
 <!-- THIS GAME NEEDS TABLET SCREEN SIZE AND ABOVE TO BE FUN -->
@@ -34,6 +37,14 @@
         </h3>
         <div id="score-ui" class="score-ui dark">
           0000000
+        </div>
+        <div id="score-ui" class="game-font">
+          completed : 
+          <div id="completed-count" class="game-font">
+            <script> 
+              $('#completed-count').text("0 / 5");
+            </script>
+          </div>
         </div>
       </div>
       <div id="logo" class="col-sm-6">
@@ -57,7 +68,13 @@
           <img class="icon" src="img/icon-find.png" alt="clue icon" />
           <img class="icon" src="img/icon-find.png" alt="clue icon" />
           <img class="icon" src="img/icon-find.png" alt="clue icon" />
-        </span>
+        </span> 
+        <span>
+          <form action="/">
+            <br/>
+            <input type="submit" class="score-ui light game-font" value="restart game" />
+          </form>
+        </span>       
       </div>
     </div>
 

@@ -17,6 +17,8 @@ $(document).ready(function () {
   var IMAGES_PLAYED = []; // img objects popped here after each round.
   var CUR_IMG_IN_PLAY = gameplayRound('check'); // stores answers for current round.
 
+  var completed_counter =0;
+
   // --- INITALISE GAME ---
 
   // CLICK LISTENERS
@@ -106,6 +108,8 @@ $(document).ready(function () {
     var amt = TIME_LEFT * 50;
     SCORE += amt;
     $('#score-ui').text(SCORE);
+    completed_counter = (completed_counter +1) % 5;        
+    $('#completed-count').text(completed_counter + " / 5");
   }
 
   // Pushes info of newly discovered answer into 'found' key in img object
