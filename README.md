@@ -1,3 +1,9 @@
+git remote -v 
+origin  https://github.com/aecom-clc/photohunt.git (fetch)
+origin  https://github.com/aecom-clc/photohunt.git (push)
+
+git push
+
 # Spot the difference
 
 A web version of the classic Spot the Difference arcade game. Demo [here](https://nickangtc.github.io/spot-the-difference/).
